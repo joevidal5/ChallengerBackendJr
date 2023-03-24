@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div>
+  <h1>Agregar post</h1>
+  <form style=" display: flex" action="{{ url_for('create_post') }}" method="post">
+    <input type="text" name="title" palceholder="titulo">
+    <textarea name="content" cols="25" rows="5"></textarea>
+    <input type="submit" name="submit"  value="Agregar Posts">
+  </form>
+  <form  action="{{ url_for('index') }}">
+    <input type="submit" name="submit" value="Volver">
+  </form>
+</div>
+    
+{% endblock %}
+
+

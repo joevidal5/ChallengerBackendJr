@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Posts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}">
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}
+    <div>
+      <h1>Posts</h1>
+      <button onclick="location.href = '{{ url_for('add') }}'">Agregar post</button>
+    <ul>
+      {% for post in posts %}
+      <li>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+        <p>{{ post.created_at.strftime('%d/%m/%y') }}</p>
+        <form action="{{ url_for('post', post_id=post.id) }}" method="get">
+          <input type="submit" name="submit" value="Ver post">
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+    </div>
+    {% endblock %}
+  </body>
+</html>
