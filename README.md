@@ -15,7 +15,7 @@ Challenger Backend Jr - Emprinet
 
 2. Create a virtual environment:
 
-- python3 -m venv env
+- virtualenv name_evn
 
 3. Activate the virtual environment:
 
@@ -23,7 +23,7 @@ Challenger Backend Jr - Emprinet
 
 4. Install the required dependencies:
 
-- pip3 install -r requirements.txt
+- pip install Flask Flask-SQLAlchemy psycopg2-binary Flask-Migrate 
 
 5. Create a .env file and set the database URI as DATABASE_URI and an SECRET_KEY:
 
