@@ -23,7 +23,7 @@ Challenger Backend Jr - Emprinet
 
 4. Install the required dependencies:
 
-- pip install Flask Flask-SQLAlchemy psycopg2-binary Flask-Migrate 
+- pip install -r requirements.txt
 
 5. Create a .env file and set the database URI as DATABASE_URI and an SECRET_KEY:
 

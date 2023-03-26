@@ -41,7 +41,6 @@ def create_post():
 @app.route('/post/<int:post_id>', methods=['GET'])
 def post(post_id):
     post = db.session.query(Posts).filter(Posts.id==post_id).first()
-    print('anda eso?') 
     return render_template('view.html', post=post)
 
 if __name__ == '__main__':
